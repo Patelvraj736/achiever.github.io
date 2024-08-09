@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.getElementById('menu-icon');
     const navList = document.getElementById('nav-list');
-    const menuItems = navList.querySelectorAll('a'); 
 
-    menuIcon.addEventListener('click', () => {
+
+    menuIcon.addEventListener('click', (event) => {
+        event.stopPropagation(); 
         navList.classList.toggle('show');
     });
+
+    document.addEventListener('click', (event) => {
+        if (!navList.contains(event.target) && !menuIcon.contains(event.target)) {
+            navList.classList.remove('show');
+        }
+    });
+    const menuItems = navList.querySelectorAll('a');
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
-            if (navList.classList.contains('show')) {
-                navList.classList.remove('show');
-            }
+            navList.classList.remove('show');
         });
     });
 });
