@@ -76,6 +76,9 @@ body {
     flex-direction: column;
     justify-content: space-around;
     text-align: justify;
+    overflow-wrap: break-word; /* Ensures long words break */
+    word-break: break-word;    /* Breaks words to prevent overflow */
+    hyphens: auto;            /* Allows automatic hyphenation */
     line-height: 25px;
     opacity: 0; 
     transform: translateY(100px); 
@@ -135,9 +138,8 @@ body {
     color: white;
     padding: 20px 250px;
     margin-bottom: 40px;
-
-
 }
+
 .services .title{
     display: flex;
     flex-direction: column;
@@ -164,9 +166,13 @@ body {
     padding: 20px 30px 30px 30px;
     margin: 0 20px;
     text-align: justify;
+    justify-content: space-around;
+    text-align: justify;
+    overflow-wrap: break-word; /* Ensures long words break */
+    word-break: break-word;    /* Breaks words to prevent overflow */
+    hyphens: auto;  
     line-height: 25px;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 .service:hover{
     background-color: rgba(250, 250, 250,1);
@@ -213,7 +219,9 @@ body {
     justify-content: center;
     gap: 40px;
     line-height: 25px;
-    text-align: justify;
+    text-align: justify;    overflow-wrap: break-word; /* Ensures long words break */
+    word-break: break-word;    /* Breaks words to prevent overflow */
+    hyphens: auto;  
 }
 .choice{
     display: flex;

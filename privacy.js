@@ -1,9 +1,19 @@
 
-const menuIcon = document.getElementById('menu-icon');
-const navList = document.getElementById('nav-list');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    const navList = document.getElementById('nav-list');
+    const menuItems = navList.querySelectorAll('a'); 
 
-menuIcon.addEventListener('click', () => {
-    navList.classList.toggle('show'); 
+    menuIcon.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (navList.classList.contains('show')) {
+                navList.classList.remove('show');
+            }
+        });
+    });
 });
 
 const instagramImage = document.getElementById('instagram-link');

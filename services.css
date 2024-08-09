@@ -64,6 +64,9 @@ body {
     display: flex ;
     flex-direction: column;
     justify-content: space-around;
+    overflow-wrap: break-word; /* Ensures long words break */
+    word-break: break-word;    /* Breaks words to prevent overflow */
+    hyphens: auto;  
     gap: 50px;
     opacity: 0; 
     transform: translateY(100px); 
@@ -95,6 +98,9 @@ body {
     line-height:30px ;
     text-align: justify;
     display: flex;
+    overflow-wrap: break-word; /* Ensures long words break */
+    word-break: break-word;    /* Breaks words to prevent overflow */
+    hyphens: auto;  
     flex-direction: column;
     gap: 50px;
     margin: 20px 40px 20px 40px;

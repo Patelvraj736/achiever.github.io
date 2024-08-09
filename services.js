@@ -10,10 +10,6 @@ linkedinImage.addEventListener('click', (event) => {
     event.preventDefault();
     window.open(linkedinURL, '_blank');
 });
-document.getElementById('menu-icon').addEventListener('click', () => {
-    const navList = document.getElementById('nav-list');
-    navList.classList.toggle('show');
-});
 const service1Div = document.getElementById('service1');
 
 service1Div.addEventListener('click', function () {
@@ -62,4 +58,20 @@ document.addEventListener('DOMContentLoaded', function () {
 const logoDiv = document.querySelector('.logo');
 logoDiv.addEventListener('click', function () {
     window.location.href = 'index.html';
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    const navList = document.getElementById('nav-list');
+    const menuItems = navList.querySelectorAll('a'); 
+
+    menuIcon.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (navList.classList.contains('show')) {
+                navList.classList.remove('show');
+            }
+        });
+    });
 });
